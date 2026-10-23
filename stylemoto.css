@@ -1,0 +1,103 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Container do formulário */
+.container {
+    margin-top: 50px; /* Distância do topo da página */
+    display: flex;
+    justify-content: flex-end; /* Faz com que o formulário fique à direita */
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+}
+
+/* Formulário e seus campos */
+form {
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
+    background-color: rgb(253, 0, 0); /* Fundo branco com transparência */
+    padding: 30px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(62, 111, 208, 0.377); /* Sombra sutil */
+}
+
+/* Estilo dos campos de entrada */
+.form-group {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+    text-align: right; /* Alinha o texto à direita */
+}
+
+label {
+    display: block; /* Faz o label ocupar a linha inteira */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo do botão de registro */
+.btn-sm {
+    width: 100%; /* Faz o botão ocupar toda a largura do formulário */
+    padding: 8px 10px; /* Ajusta o tamanho do botão */
+    font-size: 14px; /* Tamanho de texto menor */
+    margin-top: 15px; /* Espaço entre os campos e o botão */
+    background-color: #007bff; /* Cor do botão */
+    border: none; /* Remove a borda padrão */
+    color: white; /* Cor do texto do botão */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; 
+}
+
+.btn-sm:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.login-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}

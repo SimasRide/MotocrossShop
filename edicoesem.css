@@ -1,0 +1,192 @@
+
+/* Resetando margens e preenchimento */
+* 
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Definindo o fundo da página como preto */
+  body {
+    background-color: rgb(255, 0, 0); /* Cor de fundo preta */
+    color: white; /* Texto branco */
+    font-family: Arial, sans-serif; /* Definindo uma fonte legível */
+}
+
+.alert {
+    opacity: 1; /* Garante que a opacidade seja 100% */
+    transition: opacity 0.5s ease; /* Caso queira um efeito de transição, caso contrário pode remover */
+}
+
+.alert:hover {
+    opacity: 1; /* Garantir que a opacidade do alerta também não mude ao passar o mouse */
+}
+
+  
+  /* Barra de Navegação */
+  .navbar {
+    background-color: red; /* Cor da barra de navegação */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+    align-items: center;
+  }
+  
+  /* Estilo dos botões */
+  .btn {
+    background-color: transparent;
+    color: white;
+    border: 3px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover nos botões */
+  .btn:hover {
+    background-color: #575757;
+  }
+  
+  /* Título com efeito de chamas */
+  .flame-title {
+    font-size: 80px; /* Tamanho do título */
+    font-weight: bold;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue);
+    background-size: 400% 400%;
+    color: transparent; /* Torna o texto transparente */
+    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+    background-clip: text; /* Para navegadores modernos que suportam background-clip no texto */
+    animation: flame 1.5s linear infinite; /* Animação de chamas */
+  }
+  
+  /* Animação de chamas */
+  @keyframes flame {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Centralizando o título */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Margem no topo do título */
+  .mt-1 {
+    margin-top: 5rem;
+  }
+  
+  img {
+  transform: rotate (150deg);
+  }
+  img {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  
+  .form-control {
+    border-radius: 50px; /* Bordas arredondadas */
+    padding: 15px; /* Aumenta o padding para maior conforto ao digitar */
+    font-size: 1rem; /* Tamanho da fonte do campo de pesquisa */
+  }
+  
+  /* Estilo para o botão de pesquisa */
+  .btn-pesquisar {
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+    border-radius: 50px; /* Bordas arredondadas para combinar com o campo de pesquisa */
+    padding: 12px; /* Espaçamento interno */
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Torna o texto do botão mais visível */
+    transition: all 0.3s ease; /* Transição suave para o efeito de hover */
+    background-color: #f5a623; /* Cor de fundo laranja */
+    color: white; /* Cor do texto */
+    border: 2px solid #f5a623; /* Borda com a mesma cor do fundo */
+  }
+  
+  /* Efeito de hover para o botão */
+  .btn-pesquisar:hover {
+    background-color: #d48818; /* Cor de fundo mais escura quando passar o mouse */
+    border-color: #d48818; /* Borda escurecida */
+    transform: scale(1.05); /* Um leve aumento de tamanho */
+  }
+  
+  /* Efeito de foco no campo de pesquisa */
+  .form-control:focus {
+    border-color: #f5a623; /* Cor da borda do campo de pesquisa ao focar */
+    box-shadow: 0 0 5px rgba(245, 166, 35, 0.6); /* Sombra para destacar o campo de pesquisa */
+  }
+  
+  #articleList {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 200px;
+  }
+  
+  /* Estilo da lista de artigos */
+  #articleList ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #articleList li {
+    padding: 8px 0;
+  }
+  
+  /* Input invisível que é usado para alternar o display da lista */
+  #toggleList {
+    display: none;
+  }
+  
+  /* Label estilizado como um botão */
+  #toggleListLabel {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilo para o container do filtro que aparecerá ao lado do botão */
+  #filtroContainer {
+    display: none;
+    position: absolute;
+    top: 40px; /* Distância do topo para não sobrepor o botão */
+    left: 30%; /* Centraliza em relação ao botão */
+    transform: translateX(-50%); /* Ajusta para ficar ao lado do botão */
+    max-height: 200px; /* Limita a altura para quando houver muitos itens */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    
+  
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 9999; /* Garante que o filtro fique acima de outros elementos */
+  }
+  .image-rotator {
+    display: flex;
+    justify-content: space-between; /* Alinha as imagens com espaço entre elas */
+    gap: 10px; /* Espaço entre as imagens */
+  }
+  
+  .image-rotator img {
+    width: 48%; /* As imagens ocuparão 48% do tamanho do container */
+    height: auto; /* Mantém a proporção das imagens */
+  }
+  
