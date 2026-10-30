@@ -26,7 +26,7 @@ try {
         'id_acessorio',
         'equipamentos',
         'marcas',
-        'preco'
+        'preço'
     ];
 
     $columnIndex = isset($_POST['order'][0]['column'])
@@ -68,7 +68,7 @@ try {
                 id_acessorio LIKE :id_acessorio OR
                 equipamentos LIKE :equipamentos OR
                 marcas LIKE :marcas OR
-                preco LIKE :preco
+                preço LIKE :preço       
             )
         ";
 
@@ -78,7 +78,7 @@ try {
             ':id_acessorio' => $searchTerm,
             ':equipamentos' => $searchTerm,
             ':marcas' => $searchTerm,
-            ':preco' => $searchTerm
+            ':preço' => $searchTerm
         ];
     }
 
@@ -129,16 +129,36 @@ try {
             'id_acessorio' => $row['id_acessorio'],
             'equipamentos' => $row['equipamentos'],
             'marcas' => $row['marcas'],
-            'preco' => $row['preco']
+            'preço' => $row['preço'] 
         ];
     }
 
-    echo json_encode([
-        'draw' => $draw,
-        'iTotalRecords' => $totalRecords,
-        'iTotalDisplayRecords' => $totalRecordwithFilter,
-        'aaData' => $data
-    ], JSON_INVALID_UTF8_SUBSTITUTE);
+$draw = isset($_POST['draw'])
+    ? (int) $_POST['draw']
+    : 0;
+
+foreach ($data as &$row) {
+    foreach ($row as &$value) {
+        if (is_string($value)) {
+            $value = htmlspecialchars(
+                $value,
+                ENT_QUOTES | ENT_SUBSTITUTE,
+                'UTF-8'
+            );
+        }
+    }
+    unset($value);
+}
+unset($row);
+
+header('Content-Type: application/json; charset=utf-8');
+
+echo json_encode([
+    'draw' => $draw,
+    'iTotalRecords' => (int) $totalRecords,
+    'iTotalDisplayRecords' => (int) $totalRecordwithFilter,
+    'aaData' => $data
+], JSON_INVALID_UTF8_SUBSTITUTE);
 
 } catch (Throwable $e) {
     error_log('Erro em datatableacessorios.php: ' . $e->getMessage());
