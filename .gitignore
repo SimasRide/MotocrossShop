@@ -1,0 +1,28 @@
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
+config.local.php
+cnn.local.php
+cnn.php
+
+# Dependências PHP (Composer)
+vendor/
+
+# Ficheiros temporários e logs
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Visual Studio Code
+.vscode/
+
+# IDEs
+.idea/
+
+# Exportações e backups locais da base de dados
+*.sql
+*.sql.gz
