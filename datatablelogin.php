@@ -196,7 +196,7 @@ if ($dataArray && isset($dataArray['aaData']) && is_array($dataArray['aaData']))
   </head>
   <body>
     <div class="container table-container">
-      <h2 class="text-center">Tabela de Login</h2>
+      <h2 class="text-center">Login table</h2>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -218,7 +218,7 @@ if ($dataArray && isset($dataArray['aaData']) && is_array($dataArray['aaData']))
             <?php endforeach; ?>
           <?php else: ?>
             <tr>
-              <td colspan="4" class="text-center">Nenhum usuário encontrado.</td>
+              <td colspan="4" class="text-center">No users found.</td>
             </tr>
           <?php endif; ?>
         </tbody>

@@ -49,7 +49,7 @@
       
     <nav class="navbar">
       <a href="datatableclientes.php">Clients</a>
-      <a href="datatablemotas.php">Motorbikes</a>
+      <a href="datamotas.php">Motorbikes</a>
       <a href="datatableacessorios.php">Accessories</a>
     </nav>
 

@@ -100,13 +100,13 @@ try {
 
     // Obter os registos
     // A coluna e a direção são seguras porque foram validadas por listas permitidas.
-    $sql = "
+    /*$sql = "
         SELECT *
         FROM acessorios
         WHERE 1=1 $searchQuery
         ORDER BY `$columnName` $columnSortOrder
         LIMIT :limit OFFSET :offset
-    ";
+    ";*/
 
     $stmt = $pdo->prepare($sql);
 

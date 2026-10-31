@@ -48,12 +48,12 @@ if ($searchValue !== '') {
     )";
 
     $searchArray = [
-        'idmota' => "%$searchValue%",
-        'matricula' => "%$searchValue%",
-        'marca' => "%$searchValue%",
-        'modelo' => "%$searchValue%",
-        'preco' => "%$searchValue%",
-        'estado' => "%$searchValue%"
+        ':idmota' => "%$searchValue%",
+        ':matricula' => "%$searchValue%",
+        ':marca' => "%$searchValue%",
+        ':modelo' => "%$searchValue%",
+        ':preco' => "%$searchValue%",
+        ':estado' => "%$searchValue%"
     ];
 }
 
@@ -71,7 +71,9 @@ $stmt = $pdo->prepare(
      FROM motas
      INNER JOIN marca
         ON motas.idmarca = marca.idmarca
-     WHERE 1=1 " . $searchQuery
+     WHERE 1=1 " . 
+     
+     $searchQuery
 );
 
 $stmt->execute($searchArray);
@@ -97,7 +99,7 @@ $stmt = $pdo->prepare(
 
 // Parâmetros de pesquisa
 foreach ($searchArray as $key => $search) {
-    $stmt->bindValue(':' . $key, $search, PDO::PARAM_STR);
+    $stmt -> bindValue($key, $search, PDO::PARAM_STR);
 }
 
 $stmt->bindValue(':limit', $rowperpage, PDO::PARAM_INT);
@@ -124,11 +126,10 @@ foreach ($empRecords as $row) {
 // Resposta JSON
 $response = [
     'draw' => $draw,
-    'iTotalRecords' => $totalRecords,
-    'iTotalDisplayRecords' => $totalRecordwithFilter,
-    'aaData' => $data
+    'recordsTotal' => $totalRecords,
+    'recordsFiltered' => $totalRecordwithFilter,
+    'data' => $data
 ];
-
 header('Content-Type: application/json; charset=utf-8');
 
 echo json_encode($response);
