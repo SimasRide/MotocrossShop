@@ -4,301 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Motocross Shop | Catalog</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #101010;
-            color: #f5f5f5;
-        }
-
-        .back-button{
-            color: white;
-            text-decoration: nome;
-            background: #ff6b00;
-            padding: 11px 20px;
-            border-radius: 7px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .back-button:hover{
-            background: #e65f00;
-            color:white;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #171717;
-            border-bottom: 1px solid #292929;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #ff0000;
-        }
-
-        nav a {
-            color: hsl(0, 0%, 80%);
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff0000;
-        }
-
-        .backbutton {
-            background: #ff0000;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 7px;
-            font-weight: bold;
-        }
-
-        .backbutton:hover {
-            background: #cc0000;
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 75px 7%;
-            background:
-                linear-gradient(90deg, #101010 20%, rgba(16,16,16,.75)),
-                linear-gradient(135deg, #292929, #111);
-            border-bottom: 1px solid #292929;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            max-width: 650px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #ff0000;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 16px;
-            max-width: 550px;
-            line-height: 1.6;
-        }
-
-        /* MAIN */
-
-        .container {
-            width: 86%;
-            max-width: 1400px;
-            margin: 45px auto;
-        }
-
-        .section-title {
-            font-size: 25px;
-            margin-bottom: 25px;
-        }
-
-        .section-title span {
-            color: #ff6b00;
-        }
-
-        /* FILTERS */
-
-        .filters {
-            background: #191919;
-            border: 1px solid #303030;
-            border-radius: 12px;
-            padding: 22px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 35px;
-        }
-
-        .filter-group label {
-            display: block;
-            color: #aaa;
-            font-size: 13px;
-            margin-bottom: 9px;
-        }
-
-        .filter-group input,
-        .filter-group select {
-            width: 100%;
-            padding: 12px;
-            background: #252525;
-            color: white;
-            border: 1px solid #3a3a3a;
-            border-radius: 7px;
-            outline: none;
-        }
-
-        .filter-group input:focus,
-        .filter-group select:focus {
-            border-color: #ff6b00;
-        }
-
-        /* PRODUCTS */
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .product-card {
-            background: #1a1a1a;
-            border: 1px solid #303030;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            border-color: #ff6b00;
-        }
-
-        .product-image {
-            height: 230px;
-            background: #252525;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #777;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-brand {
-            color: #ff6b00;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .product-info h3 {
-            font-size: 21px;
-            margin: 9px 0;
-        }
-
-        .product-details {
-            color: #999;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-
-        .product-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product-price {
-            color: #ff6b00;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .status {
-            font-size: 12px;
-            color: #4ade80;
-            background: #163323;
-            padding: 6px 10px;
-            border-radius: 20px;
-        }
-
-        .details-button {
-            display: block;
-            text-align: center;
-            margin-top: 18px;
-            padding: 12px;
-            background: #ff6b00;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .details-button:hover {
-            background: #e65f00;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #171717;
-            border-top: 1px solid #292929;
-            padding: 25px;
-            text-align: center;
-            color: #777;
-            margin-top: 70px;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 900px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .filters {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: row;
-                gap: 15px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            nav a {
-                margin: 0;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .products-grid,
-            .filters {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                width: 90%;
-            }
-        }
-    </style>
+   <link rel="stylesheet" href="style.css">
+      
 </head>
 
 <body>
@@ -360,9 +69,9 @@
             <div class="filter-group">
                 <label for="statusFilter">Status</label>
                 <select id="statusFilter">
-                    <option value="">All Statuses</option>
-                    <option value="À Venda">For Sale</option>
-                    <option value="Reservada">Reserved</option>
+                    <option value="">All Status</option>
+                    <option value="For Sale">For Sale</option>
+                    <option value="Reserved">Reserved</option>
                 </select>
             </div>
 
@@ -380,9 +89,7 @@
         <!-- PRODUCT GRID -->
 
         <div class="products-grid" id="motasGrid">
-
             <p>Loading motorcycles...</p>
-
         </div>
 
     </main>
@@ -392,10 +99,166 @@
     <footer>
         © 2026 Motocross Shop. All rights reserved.
     </footer>
-    
-<script>
+    <script>
+        // Variável global para guardar as motas originais vindas do servidor
+        let allMotorcycles = [];
 
+        async function loadMotorcycles() {
+            const grid = document.getElementById('motasGrid');
+            grid.innerHTML = '<p>Loading motorcycles...</p>';
 
+            try {
+                const response = await fetch('datatablemotas.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        draw: 1,
+                        start: 0,
+                        length: 100,
+                        'order[0][column]': 0,
+                        'order[0][dir]': 'ASC',
+                        'columns[0][data]': 'idmota',
+                        'search[value]': ''
+                    })
+                });
 
+                if (!response.ok) {
+                    throw new Error('Server error: ' + response.status);
+                }
+
+                const result = await response.json();
+
+                if (!result.data || result.data.length === 0) {
+                    grid.innerHTML = '<p>No motorcycles found.</p>';
+                    return;
+                }
+
+                // Guardar os dados recebidos na nossa variável global
+                allMotorcycles = result.data;
+
+                // Preencher o filtro de marcas dinamicamente com as marcas existentes
+                populateBrandFilter(allMotorcycles);
+
+                // Renderizar a lista inicial
+                renderMotorcycles(allMotorcycles);
+
+            } catch (error) {
+                console.error('Error loading motorcycles:', error);
+                grid.innerHTML = '<p>Unable to load motorcycles.</p>';
+            }
+        }
+
+        // Função responsável apenas por desenhar os cartões no ecrã
+        function renderMotorcycles(motorcyclesList) {
+            const grid = document.getElementById('motasGrid');
+            grid.innerHTML = '';
+
+            if (motorcyclesList.length === 0) {
+                grid.innerHTML = '<p>No motorcycles match your filters.</p>';
+                return;
+            }
+
+            motorcyclesList.forEach(mota => {
+                const image = mota.foto
+                    ? `<img src="${escapeHTML(mota.foto)}" alt="${escapeHTML(mota.marca)} ${escapeHTML(mota.modelo)}">`
+                    : '<div class="no-image">Image coming soon</div>';
+
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                card.innerHTML = `
+                    <div class="product-image">${image}</div>
+                    <div class="product-info">
+                        <span class="product-brand">${escapeHTML(mota.marca)}</span>
+                        <h3>${escapeHTML(mota.modelo)}</h3>
+                        <p class="product-details">Registration: ${escapeHTML(mota.matricula)}</p>
+                        <div class="product-bottom">
+                            <span class="product-price">${Number(mota.preco).toFixed(2)} €</span>
+                            <span class="status">${escapeHTML(mota.estado)}</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Preenche o <select id="brandFilter"> automaticamente com as marcas da BD
+        function populateBrandFilter(motorcyclesList) {
+            const brandFilter = document.getElementById('brandFilter');
+            
+            // Cria uma lista de marcas únicas (sem repetições)
+            const brands = [...new Set(motorcyclesList.map(mota => mota.marca))].sort();
+            
+            // Limpa opções antigas mantendo apenas a primeira
+            brandFilter.innerHTML = '<option value="">All Brands</option>';
+            
+            brands.forEach(brand => {
+                const option = document.createElement('option');
+                option.value = brand;
+                option.textContent = brand;
+                brandFilter.appendChild(option);
+            });
+        }
+
+        // NOVA FUNÇÃO: Aplica todos os filtros (Pesquisa, Marca, Status e Ordenação) em tempo real
+        function applyFilters() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            const selectedBrand = document.getElementById('brandFilter').value;
+            const selectedStatus = document.getElementById('statusFilter').value;
+            const selectedSort = document.getElementById('sortFilter').value;
+
+            // 1. Filtrar os dados
+            let filteredList = allMotorcycles.filter(mota => {
+                // Filtro de Texto (Marca, Modelo ou Matrícula)
+                const matchesSearch = 
+                    mota.marca.toLowerCase().includes(searchValue) || 
+                    mota.modelo.toLowerCase().includes(searchValue) || 
+                    mota.matricula.toLowerCase().includes(searchValue);
+                
+                // Filtro de Marca
+                const matchesBrand = selectedBrand === "" || mota.marca === selectedBrand;
+                
+                // Filtro de Status (compara com mota.estado vindo do PHP)
+                const matchesStatus = selectedStatus === "" || mota.estado === selectedStatus;
+
+                return matchesSearch && matchesBrand && matchesStatus;
+            });
+
+            // 2. Ordenar os dados filtrados
+            if (selectedSort === "asc") {
+                filteredList.sort((a, b) => Number(a.preco) - Number(b.preco));
+            } else if (selectedSort === "desc") {
+                filteredList.sort((a, b) => Number(b.preco) - Number(a.preco));
+            }
+
+            // 3. Voltar a desenhar o catálogo atualizado
+            renderMotorcycles(filteredList);
+        }
+
+        // Escape HTML to prevent HTML injection
+        function escapeHTML(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            })[char]);
+        }
+
+        // Ativar os ouvintes de eventos assim que o HTML estiver pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMotorcycles();
+
+            // Escutar as mudanças em todos os inputs de filtro
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('brandFilter').addEventListener('change', applyFilters);
+            document.getElementById('statusFilter').addEventListener('change', applyFilters);
+            document.getElementById('sortFilter').addEventListener('change', applyFilters);
+        });
+    </script>
 </body>
 </html>
+
