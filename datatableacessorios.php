@@ -155,10 +155,15 @@ header('Content-Type: application/json; charset=utf-8');
 
 echo json_encode([
     'draw' => $draw,
-    'iTotalRecords' => (int) $totalRecords,
-    'iTotalDisplayRecords' => (int) $totalRecordwithFilter,
+    'iTotalRecords' => $totalRecords,
+    'iTotalDisplayRecords' => $totalRecordwithFilter,
     'aaData' => $data
-], JSON_INVALID_UTF8_SUBSTITUTE);
+], JSON_INVALID_UTF8_SUBSTITUTE
+   | JSON_HEX_TAG
+   | JSON_HEX_APOS
+   | JSON_HEX_QUOT
+   | JSON_HEX_AMP);
+
 
 } catch (Throwable $e) {
     error_log('Erro em datatableacessorios.php: ' . $e->getMessage());
