@@ -163,7 +163,7 @@ echo json_encode([
    | JSON_HEX_APOS
    | JSON_HEX_QUOT
    | JSON_HEX_AMP);
-
+//My status !
 
 } catch (Throwable $e) {
     error_log('Erro em datatableacessorios.php: ' . $e->getMessage());
