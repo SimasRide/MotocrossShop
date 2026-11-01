@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $repeatpassword = $_POST['repeatpassword'] ?? '';
-
+    /** @var PDO $pdo */
     if ($password !== $repeatpassword) {
         $error = 'Passwords do not match.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

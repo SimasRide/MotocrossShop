@@ -50,6 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         SET nome = :nome, datanasc = :datanasc, idade = :idade
                         WHERE idcli = :idcli';
             }
+/** @var PDO $pdo */
+$stmt = $pdo->prepare($sql); 
+$stmt->execute($client);
 
             $stmt = $pdo->prepare($sql);
             $stmt->execute($client);
@@ -58,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($action === 'delete') {
+            /** @var PDO $pdo */
             $stmt = $pdo->prepare('DELETE FROM clientes WHERE idcli = ?');
             $stmt->execute([(int)($_POST['idcli'] ?? 0)]);
 
@@ -80,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                        OR CAST(idade AS CHAR) LIKE ?";
             $params = array_fill(0, 4, "%$search%");
         }
-
+/** @var PDO $pdo */
         $total = (int)$pdo->query('SELECT COUNT(*) FROM clientes')->fetchColumn();
 
         $stmt = $pdo->prepare('SELECT COUNT(*) FROM clientes' . $where);
@@ -123,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="clients.css">
+    
 
     <style>
         body {

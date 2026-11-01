@@ -58,6 +58,7 @@ if ($searchValue !== '') {
 }
 
 // Total de registos sem pesquisa
+/** @var PDO $pdo */
 $stmt = $pdo->query(
     "SELECT COUNT(*) AS allcount FROM motas"
 );

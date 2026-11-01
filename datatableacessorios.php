@@ -83,6 +83,7 @@ try {
     }
 
     // Total de registos
+    /** @var PDO $pdo */
     $stmt = $pdo->prepare(
         "SELECT COUNT(*) AS allcount FROM acessorios"
     );
@@ -107,8 +108,15 @@ try {
         ORDER BY `$columnName` $columnSortOrder
         LIMIT :limit OFFSET :offset
     ";*/
+// Define uma rota de fuga (ex: listar todos se não houver filtro)
+$categoria = ''; // Valor padrão inicial
 
-    $stmt = $pdo->prepare($sql);
+if (isset($_GET['filtro'])) {
+    $categoria = $_GET['filtro'];
+}
+
+if ($categoria == 'capacetes') 
+
 
     foreach ($searchArray as $key => $value) {
         $stmt->bindValue($key, $value, PDO::PARAM_STR);

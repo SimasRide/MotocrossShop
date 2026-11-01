@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Please enter your email and password.';
     } else {
   try {
+    /** @var PDO $pdo */
     $stmt = $pdo->prepare(
         "SELECT idlogin, nome, email, senha
          FROM autenticacao

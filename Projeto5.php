@@ -10,8 +10,8 @@
 
   <body>
 <div class="row">
-        <div class="col-md-12 text-center mt-5">
-          <h1 class="flame-title">MOTOCROSS SHOP</h1> 
+        <div class="col-md-7 text-center mt-5">
+          <h4 class="flame-title">MOTOCROSS SHOP</h4> 
         </div>
       </div>     
   <a href="login.php">
@@ -39,7 +39,7 @@
  
 <div class="row">
   <div class="col-md-12 text-center mt-5">
-<h1 class="flame-title">ABOUT US</h1> 
+<h4 class="flame-title">ABOUT US</h4> 
 <body>
 
     

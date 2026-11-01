@@ -94,7 +94,7 @@ if(!isset($_SESSION['idlogin']) || $_SESSION['idlogin']!=true){
       <h4 class="alert-heading">Welcome - <?php echo $_SESSION['nome']?></h4>
       <p>Welcome to Sumeet's Login page. You are logged in as <?php echo $_SESSION['nome']?>. You successfully got into this page, i hope you have a good experience.</p>
       <hr>
-      <p class="mb-0">Whenever you need to, be sure to logout <a href="/logout.php"> using this link.</a></p>
+      <p class="mb-0">Whenever you need to, be sure to logout <a href="/xampp/MotocrossShop/projeto5.php"> using this link.</a></p>
    
 
     </div>

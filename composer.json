@@ -1,0 +1,13 @@
+{
+    "name": "simofalco/motocross-shop",
+    "authors": [
+        {
+            "name": "Simao",
+            "email": "simao.falcao@my.istec.pt"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpstan/phpstan": "^2.3"
+    }
+}

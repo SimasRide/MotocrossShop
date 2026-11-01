@@ -54,10 +54,10 @@
   
   /* Título com efeito de chamas */
   .flame-title {
-    font-size: 80px; /* Tamanho do título */
+    font-size: 40px; /* Tamanho do título */
     font-weight: bold;
     background: linear-gradient(45deg, red, orange, yellow, green, blue);
-    background-size: 400% 400%;
+    background-size: 200% 200%;
     color: transparent; /* Torna o texto transparente */
     -webkit-background-clip: text; /* Aplica o gradiente ao texto */
     background-clip: text; /* Para navegadores modernos que suportam background-clip no texto */
